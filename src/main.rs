@@ -121,7 +121,6 @@ fn spawn_players(
 ) {
     let socket = UdpManager::bind(pool.deref().deref().clone(), config.bind).unwrap();
     let peer = socket.connect(UdpConnectionConfig::unbounded(config.remote));
-    let remote = backroll::Player::Remote(peer);
 
     commands.insert_resource(socket);
 
@@ -143,7 +142,7 @@ fn spawn_players(
             // set up remote player
             Player {
                 // make sure to clone the remote peer for reference stuff
-                handle: builder.add_player(remote.clone()),
+                handle: builder.add_player(backroll::Player::Remote(peer.clone())),
             }
         });
 
@@ -161,7 +160,7 @@ fn spawn_players(
         } else {
             // set up remote player
             Player {
-                handle: builder.add_player(remote),
+                handle: builder.add_player(backroll::Player::Remote(peer)),
             }
         });
 

@@ -48,7 +48,7 @@ struct Materials {
 
 const MATCH_UPDATE_LABEL: &str = "MATCH_UPDATE";
 
-const DELTA_TIME: f32 = 1000.0 / 60.0; // in ms
+const DELTA_TIME: f32 = 1.0 / 60.0; // in ms
 
 pub struct OurBackrollPlugin;
 

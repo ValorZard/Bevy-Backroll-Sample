@@ -98,12 +98,12 @@ fn sample_input(handle: In<PlayerHandle>, keyboard_input: Res<Input<KeyCode>>) -
 }
 
 fn save_world() -> GameState {
-    println!("Save da world");
+    //println!("Save da world");
     GameState {}
 }
 
 fn load_world(state: In<GameState>) {
-    println!("Load da world");
+    //println!("Load da world");
 }
 
 fn setup_game(mut commands: Commands, mut materials: ResMut<Assets<ColorMaterial>>) {
